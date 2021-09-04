@@ -47,7 +47,12 @@ function setup() {
 
 function draw() {
   background("lightblue");
-  
+  if (score>100)
+  {
+    chat=createSprite(300,300)
+    chat.addImage(dishImg)
+    chat.scale=0.1;
+  }
   if(gameState===PLAY){
     
     //Call fruits and Monster function
@@ -66,6 +71,7 @@ function draw() {
     
  
     }
+    
     else
     {
       // Go to end state if sword touching enemy
@@ -124,17 +130,12 @@ function fruits(){
     else
     {
       if(position==2){
-      
       fruit.x=0;
       
      //update below give line of code for increase fruitGroup speed by 4
-      fruit.velocityX= (7+(score/4)
-           
+      fruit.velocityX= (7+(score/4))
       }
     }
-  
-    
-    
     
     fruit.scale=0.2;
      //fruit.debug=true;
